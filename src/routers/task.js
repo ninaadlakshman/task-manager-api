@@ -20,7 +20,8 @@ router.post('/tasks', auth, async (req, res) => {
 //GET /tasks?limit=10&skip=20
 //GET /tasks?sortBy=createdAt:desc
 router.get('/tasks', auth, async (req, res) => {
-    let match, sort = {}
+    let match = {}
+    let sort = {}
     
     if (req.query.completed) {
         match.completed = req.query.completed
